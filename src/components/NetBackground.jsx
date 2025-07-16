@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 
-export const StarBackground = () => {
+export const NetBackground = () => {
   const canvasRef = useRef(null);
   const animationRef = useRef(null);
 

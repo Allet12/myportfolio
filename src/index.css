@@ -20,51 +20,44 @@
   --animate-fade-in-delay-3: fade-in 0.7s ease-out 0.6s forwards;
   --animate-fade-in-delay-4: fade-in 0.7s ease-out 0.8s forwards;
   --animate-meteor: meteor 5s linear infinite;
-  --animate-fly: fly-right 10s linear infinite;        /* new */
+  --animate-fly: fly-right 10s linear infinite; /* new */
 }
 
-
+/* ─── Keyframes (unchanged) ───────────────────── */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50%      { transform: translateY(-10px); }
 }
-
 @keyframes pulse-subtle {
   0%, 100% { opacity: 1; }
   50%      { opacity: .8; }
 }
-
 @keyframes fade-in {
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-
 @keyframes meteor {
-  0%   { transform: rotate(215deg) translateX(0);   opacity: 1; }
+  0%   { transform: rotate(215deg) translateX(0); opacity: 1; }
   70%  { opacity: 1; }
   100% { transform: rotate(215deg) translateX(-500px); opacity: 0; }
 }
-
 @keyframes fly-right {
-  from { transform: translateX(0)       translateY(0)   rotate(0deg); }
-  to   { transform: translateX(110vw)   translateY(-10vh) rotate(2deg); }
+  from { transform: translateX(0) translateY(0) rotate(0deg); }
+  to   { transform: translateX(110vw) translateY(-10vh) rotate(2deg); }
 }
-
 @keyframes fly-left {
-  from { transform: translateX(0)       translateY(0)   rotate(0deg) scaleX(-1); }
-  to   { transform: translateX(-110vw)  translateY(10vh) rotate(-2deg) scaleX(-1); }
+  from { transform: translateX(0) translateY(0) rotate(0deg) scaleX(-1); }
+  to   { transform: translateX(-110vw) translateY(10vh) rotate(-2deg) scaleX(-1); }
 }
 
-
-
+/* ─── Base layer ──────────────────────────────── */
 @layer base {
   :root {
     --background: 210 40% 98%;
-    --foreground: 222 47% 11%;
-
+    --foreground: 213 31% 91%;      /* ← changed to light text */
     --card: 0 0% 100%;
 
-    --primary: 142 78% 35%; /* 💚 green */
+    --primary: 142 78% 35%;
     --primary-foreground: 210 40% 98%;
 
     --border: 214 32% 91%;
@@ -76,19 +69,21 @@
 
     --card: 222 47% 8%;
 
-    --primary: 142 70% 45%; /* 💚 green for dark mode */
+    --primary: 142 70% 45%;
     --primary-foreground: 213 31% 91%;
 
     --border: 217 33% 20%;
   }
 
-  *       { @apply border-border; }
-  html    { @apply scroll-smooth; }
-  body    { @apply bg-background text-foreground transition-colors duration-300; 
-            font-feature-settings: "rlig" 1, "calt" 1; }
+  *    { @apply border-border; }
+  html { @apply scroll-smooth; }
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
 }
 
-
+/* ─── Utility layer (unchanged) ───────────────── */
 @utility container {
   margin-inline: auto;
   padding-inline: 2rem;
@@ -101,37 +96,19 @@
 
 @utility text-glow      { @apply relative; text-shadow: 0 0 10px rgba(34,197,94,.5); }
 @utility card-hover     { @apply transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg; }
-@utility gradient-border{ @apply relative rounded-md; background: linear-gradient(to right,hsl(var(--card)),hsl(var(--card))); background-clip: padding-box; border: 1px solid transparent; }
-@utility cosmic-button  { @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium transition-all duration-300 hover:shadow-[0_0_10px_rgba(34,197,94,.5)] hover:scale-105 active:scale-95; }
-
-
-@utility star {
-  @apply absolute rounded-full bg-white;
-  box-shadow: 0 0 10px 2px rgba(255,255,255,.4);
+@utility gradient-border{
+  @apply relative rounded-md;
+  background: linear-gradient(to right,hsl(var(--card)),hsl(var(--card)));
+  background-clip: padding-box;
+  border: 1px solid transparent;
+}
+@utility cosmic-button  {
+  @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium
+         transition-all duration-300 hover:shadow-[0_0_10px_rgba(34,197,94,.5)]
+         hover:scale-105 active:scale-95;
 }
 
-@utility meteor {
-  @apply absolute bg-linear-to-r from-white via-white to-transparent rounded-full;
-  box-shadow: 0 0 10px 5px rgba(255,255,255,.3);
-}
-
-@utility bird {
-  @apply absolute;
-  width: 32px;
-  height: 32px;
-  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'><path d='M2 12c5-2 9 2 15-1-3 4-8 6-15 1zm15 0c4 1 5 4 5 4-2-1-4-2-5-4z'/></svg>") center/contain no-repeat;
-}
-
-
-@utility fly-right {
-  animation: fly-right var(--fly-duration,10s) linear var(--fly-delay,0s) infinite;
-}
-
-@utility fly-left {
-  animation: fly-left var(--fly-duration,10s) linear var(--fly-delay,0s) infinite;
-}
-
-/* ─── Root wrapper for React (unchanged) ─────────── */
+/* Root wrapper */
 #root {
   max-width: 100%;
   margin: 0 auto;
