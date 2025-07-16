@@ -5,7 +5,14 @@ export const HeroSection = () => {
     <section
       id="hero"
       className="relative min-h-screen flex flex-col items-center justify-center px-4"
+
     >
+      <img
+        src="/Allet.jpg"             
+        alt="Allet"
+        className="mb-8 h-48 w-48 rounded-full object-cover ring-4 ring-green-500/80 shadow-lg opacity-0 animate-fade-in"
+      />
+
       <div className="container max-w-4xl mx-auto text-center z-10">
         <div className="space-y-6">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
