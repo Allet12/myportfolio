@@ -1,4 +1,4 @@
-# 🌐 Mngomezulu Allet's Developer Portfolio
+# 🌐 Mngomezulu Kgotlelelo Allet's Portfolio
 
 A sleek and modern personal web portfolio built with **React**, **Vite**, and **Tailwind CSS**, showcasing my work, skills, and experience as a Full Stack Developer. The site includes interactive elements like a neural network-inspired animated background and voiceover, as well as support for downloading my CV.
 
