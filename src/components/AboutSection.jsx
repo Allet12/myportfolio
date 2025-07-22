@@ -15,16 +15,22 @@ export const AboutSection = () => {
             </h3>
 
             <p className="text-muted-foreground">
-              With 2 years of experience in full stack development, I specialize
-              in building responsive, accessible, and high-performance web
-              applications using modern technologies.
-            </p>
-
-            <p className="text-muted-foreground">
               I'm passionate about developing elegant solutions to complex
               problems and continuously learning new tools and techniques to stay
               ahead in the fast-paced tech world.
             </p>
+
+
+            <p className="text-muted-foreground">
+              I'm passionate about developing elegant solutions to complex
+              problems and continuously learning new tools and techniques to stay
+              ahead in the fast-paced tech world. I was a regional finalist in the
+              Huawei ICT Competition (Computing Track), where I gained hands-on
+              experience with openGauss, openEuler, and Kunpeng technologies.
+              I also hold a Microsoft Azure AI Fundamentals certification, which
+              deepened my understanding of AI concepts and cloud-based solutions.
+            </p>
+
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
               <a href="#contact" className="cosmic-button">
@@ -48,10 +54,9 @@ export const AboutSection = () => {
                   <Code className="h-6 w-6 text-green-600" />
                 </div>
                 <div className="text-left">
-                  <h4 className="font-semibold text-lg"> Web Development</h4>
+                  <h4 className="font-semibold text-lg">Web Development</h4>
                   <p className="text-muted-foreground">
-                    Creating responsive websites and web applications with
-                    modern frameworks.
+                    Building responsive and full stack web applications using modern tools like React, Tailwind CSS, Spring Boot, and MySQL for both frontend and backend development.
                   </p>
                 </div>
               </div>
@@ -64,8 +69,7 @@ export const AboutSection = () => {
                 <div className="text-left">
                   <h4 className="font-semibold text-lg">UI/UX Design</h4>
                   <p className="text-muted-foreground">
-                    Designing intuitive user interfaces and seamless user
-                    experiences.
+                    Creating clean, user-friendly interfaces and smooth user experiences using design tools like Figma and modern frontend technologies.
                   </p>
                 </div>
               </div>
@@ -75,12 +79,10 @@ export const AboutSection = () => {
                 <div className="p-3 rounded-full bg-green-100">
                   <Briefcase className="h-6 w-6 text-green-600" />
                 </div>
-
                 <div className="text-left">
-                  <h4 className="font-semibold text-lg">Project Management</h4>
+                  <h4 className="font-semibold text-lg">Backend & Database Development</h4>
                   <p className="text-muted-foreground">
-                    Leading projects from conception to completion with agile
-                    methodologies.
+                    Building robust backend systems with Spring Boot and managing scalable databases using MySQL, openGauss, and other modern tools.
                   </p>
                 </div>
               </div>
